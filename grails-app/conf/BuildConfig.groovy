@@ -46,11 +46,13 @@ grails.project.dependency.resolution = {
 
         provided ':webxml:1.4.1'
 
-        compile(":hibernate4:4.3.10") {
+        compile(":hibernate4:4.1.11.7") {
+            excludes 'hibernate-jpa-2.0-api'
+            excludes 'jboss-transaction-api_1.1_spec'
             export = false
         }
 
-        compile(':hibernate-hijacker:1.0') {
+        compile(':hibernate-hijacker:1.01') {
             excludes 'svn'
         }
     }
