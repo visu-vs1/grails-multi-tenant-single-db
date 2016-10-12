@@ -67,7 +67,7 @@ class MtSingleDbPluginSupport {
         // each tenant only sees and touches its own data.
         multiTenantHibernateFilter(FilterDefinitionFactoryBean) {
             filterName = "multiTenantHibernateFilter"
-            defaultFilterCondition = ":tenantId = tenant_id"
+            defaultFilterCondition = ":tenantId = this_.tenant_id"
             parameterTypes = [tenantId: "java.lang.Integer"]
         }
 
